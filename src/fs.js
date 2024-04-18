@@ -9,7 +9,6 @@ const ROOT_DIR = "api";
  */
 export function CreateDirIfNotExist(dir_path = "") {
     const fullPath = ROOT_DIR + "/" + dir_path;
-    console.log(fullPath);
     if( !existsSync(fullPath) ) {
         mkdirSync(fullPath, { recursive: true });
     }

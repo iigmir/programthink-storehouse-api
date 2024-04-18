@@ -11,11 +11,11 @@ Familiarise yourself with this dude:
 
 ## How to use
 
-There format of API files is: `{TIMESTAMP}-{BLOG_ID}-{FORMAT}.json`.
+There format of API files is: `/{TIMESTAMP}-{BLOG_ID}/{FORMAT}.json`.
 
-* `TIMESTAMP` is an [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time).
+* `TIMESTAMP` is an [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) that contents were retrived.
 * `BLOG_ID` currently will always be `5235590154125226279`, but you may want to use the project to the other blogs, anyway...
-* `FORMAT` can be `info` or `posts`.
+* `FORMAT` can be `info`, `pages`, or `posts`.
 
 ## How to contribute
 
