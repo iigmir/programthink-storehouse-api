@@ -43,3 +43,13 @@ export async function GetBlogPosts(id = "", other_params = {}) {
         return { error };
     }
 }
+
+export async function GetApiByPath(url, other_params = {}) {
+    const api = `${url}?${GetPatams({ ...other_params })}`;
+    try {
+        const response = await fetch(api);
+        return await response.json();
+    } catch (error) {
+        return { error };
+    }
+}

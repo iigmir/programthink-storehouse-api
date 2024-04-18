@@ -1,4 +1,6 @@
 import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { dirname } from "path";
+
 const ROOT_DIR = "api";
 
 /**
@@ -6,8 +8,10 @@ const ROOT_DIR = "api";
  * @param {String} dir_path 
  */
 export function CreateDirIfNotExist(dir_path = "") {
-    if( !existsSync(ROOT_DIR + dir_path) ) {
-        mkdirSync(ROOT_DIR + dir_path);
+    const fullPath = ROOT_DIR + "/" + dir_path;
+    console.log(fullPath);
+    if( !existsSync(fullPath) ) {
+        mkdirSync(fullPath, { recursive: true });
     }
 }
 
@@ -17,6 +21,6 @@ export function CreateDirIfNotExist(dir_path = "") {
  * @param {String} content 
  */
 export function ExportFileToPath(filename = "result.json", content = "") {
-    CreateDirIfNotExist("");
+    CreateDirIfNotExist(dirname(filename));
     writeFileSync( `${ROOT_DIR}/${filename}`, content );
 };

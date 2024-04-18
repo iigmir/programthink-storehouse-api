@@ -1,12 +1,15 @@
-import { GetBlogByPath, GetBlogPosts } from "./api.js";
+import { GetBlogByPath, GetBlogPosts, GetApiByPath } from "./api.js";
 import { GetBlogByPathInterface, GetBlogPostsInterface } from "./api.interface.js";
 import { ExportFileToPath } from "./fs.js";
 
-const export_result = (id = "", exported_object = [], response = {}, is_posts = false) => {
-    let filename = `${Date.now()}-${response.id}-info.json`;
-    if (is_posts) {
-        filename = `${Date.now()}-${id}-posts.json`;
-    }
+const ApiStoringFile = {
+    src: "",
+    get path() { return this.src; },
+    set path(input = "") { this.src = input; }
+};
+
+const export_result = (id = "", exported_object = [], response = {}, type = "unknown") => {
+    let filename = `${ApiStoringFile.path}/${type}.json`;
     let filecontent = JSON.stringify([...exported_object, response]);
     ExportFileToPath(filename, filecontent);
     return;
@@ -47,7 +50,7 @@ const get_all_posts = (id = "") => {
                 // Recursion!
                 return get_each_post(id, response.nextPageToken, [...exported_object, response]);
             } else {
-                return export_result(id, exported_object, response, true);
+                return export_result(id, exported_object, response, "posts");
             }
         });
     };
@@ -57,11 +60,19 @@ const get_all_posts = (id = "") => {
     return get_each_post(id, "", []);
 };
 
+const get_all_pages = (url = "", id = "") => {
+    GetApiByPath(url).then( (response) => {
+        export_result(id, [], response, "pages");
+    });
+};
+
 const main = (url = "") => {
     // Action
     console.log("Getting info...");
     GetBlogByPath(url).then( (response = GetBlogByPathInterface) => {
-        export_result(response.id, [], response, false);
+        ApiStoringFile.path = `${response.id}-${Date.now()}`;
+        export_result(response.id, [], response, "info");
+        get_all_pages(response.pages.selfLink, response.id);
         get_all_posts(response.id);
     });
 };
