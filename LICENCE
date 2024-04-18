@@ -1,0 +1,43 @@
+# LICENCE
+
+1. Contents under the `/api` directory are licenced under **programthink's copyright claim**.
+2. Contents under the other directories are licenced under **Unlicense license**.
+
+## Under the `api` directory
+
+[programthink](https://www.blogger.com/profile/11741356469378252621) stated his articles' copyright as:
+
+> 本博客所有的原创文章，作者皆保留版权。转载必须包含本声明，保持本文完整，并以超链接形式注明作者[编程随想](mailto:program.think@gmail.com)和本文原始地址： {URL}
+
+Translation:
+
+> All rights reserved for original articles on this blog. When sharing or reposting, you must include this copyright claim, keep the sharing article unchanged, and attribute the author [编程随想 (@programthink)](mailto:program.think@gmail.com) and the original article URL address: {URL}
+
+By the statement, DO NOT change any content values in the `api` directory.
+
+## Under any other files except the `api` directory
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <https://unlicense.org>

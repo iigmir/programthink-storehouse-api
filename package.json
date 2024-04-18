@@ -1,0 +1,15 @@
+{
+  "name": "programthink-storehouse-api",
+  "version": "1.0.0",
+  "description": "Get programthink's blogger posts",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js https://program-think.blogspot.com",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iigmir",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
